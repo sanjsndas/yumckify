@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Yumckify — Get in Touch!</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Open+Sans:wght@400;700&display=swap');
+
+        :root {
+            --bold-mango-yellow: #FFCA28;
+            --candy-pink: #F06292;
+            --jet-black: #212121;
+            --cloud-white: #FAFAFA;
+            --electric-mint-green: #4DB6AC;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--jet-black);
+            background-color: var(--cloud-white);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- Header --- */
+        header {
+            background-color: var(--bold-mango-yellow);
+            padding: 20px 0;
+            color: var(--jet-black);
+            text-align: center;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-family: 'Fredoka One', cursive;
+            font-size: 2.5em;
+            color: var(--jet-black);
+            text-decoration: none;
+            line-height: 1;
+        }
+
+        .logo span {
+            color: var(--candy-pink);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        nav ul li a {
+            color: var(--jet-black);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--cloud-white);
+        }
+
+        /* --- Contact Hero Section --- */
+        .contact-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://via.placeholder.com/1500x300/FFCA28/212121?text=Connect+with+Yumckify') no-repeat center center/cover;
+            color: var(--cloud-white);
+            text-align: center;
+            padding: 80px 20px;
+            margin-bottom: 40px;
+        }
+
+        .contact-hero h1 {
+            font-family: 'Fredoka One', cursive;
+            font-size: 3.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .contact-hero p {
+            font-size: 1.2em;
+        }
+
+        /* --- Contact Content Section --- */
+        .contact-content {
+            padding: 40px 0;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr; /* Form wider than info */
+            gap: 50px;
+            align-items: flex-start; /* Align content to the top */
+        }
+
+        .contact-form-section, .contact-info-section {
+            background-color: var(--cloud-white);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border: 2px solid var(--electric-mint-green);
+        }
+
+        .contact-form-section h2, .contact-info-section h2 {
+            font-family: 'Fredoka One', cursive;
+            font-size: 2.2em;
+            color: var(--candy-pink);
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .contact-form-section h2::after, .contact-info-section h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--bold-mango-yellow);
+            margin-top: 10px;
+            border-radius: 3px;
+        }
+
+        .contact-form label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .contact-form input[type="text"],
+        .contact-form input[type="email"],
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1em;
+            font-family: 'Open Sans', sans-serif;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .contact-form input[type="text"]:focus,
+        .contact-form input[type="email"]:focus,
+        .contact-form textarea:focus {
+            border-color: var(--candy-pink);
+            box-shadow: 0 0 0 3px rgba(240, 98, 146, 0.2);
+            outline: none;
+        }
+
+        .contact-form textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .contact-form button {
+            background-color: var(--candy-pink);
+            color: var(--cloud-white);
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            display: block; /* Make button take full width in its container */
+            width: 100%;
+            max-width: 250px; /* Limit button width */
+            margin: 0 auto; /* Center the button */
+        }
+
+        .contact-form button:hover {
+            background-color: #d15682; /* Darker pink */
+            transform: translateY(-3px);
+        }
+
+        .contact-info-section p {
+            margin-bottom: 15px;
+            font-size: 1.05em;
+            color: #444;
+        }
+
+        .contact-info-section p strong {
+            color: var(--jet-black);
+        }
+
+        .contact-info-section a {
+            color: var(--candy-pink);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info-section a:hover {
+            color: #d15682;
+            text-decoration: underline;
+        }
+
+        .map-placeholder {
+            width: 100%;
+            height: 300px;
+            background-color: #e0e0e0;
+            border-radius: 10px;
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #666;
+            font-style: italic;
+            border: 1px dashed #aaa;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: var(--jet-black);
+            color: var(--cloud-white);
+            padding: 40px 0;
+            text-align: center;
+            font-size: 0.9em;
+            margin-top: 60px;
+        }
+
+        footer .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        footer nav ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        footer nav ul li a {
+            color: var(--cloud-white);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer nav ul li a:hover {
+            color: var(--candy-pink);
+        }
+
+        .footer-info p {
+            margin-bottom: 5px;
+        }
+
+        /* --- Mobile Responsiveness --- */
+        @media (max-width: 992px) {
+            .contact-content {
+                grid-template-columns: 1fr; /* Stack columns on smaller screens */
+            }
+        }
+
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .contact-hero h1 {
+                font-size: 2.5em;
+            }
+
+            .contact-hero p {
+                font-size: 1em;
+            }
+
+            .contact-form-section h2, .contact-info-section h2 {
+                font-size: 1.8em;
+            }
+
+            .contact-form button {
+                max-width: none; /* Allow full width on small screens */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 2em;
+            }
+
+            .contact-hero h1 {
+                font-size: 2em;
+            }
+
+            .contact-form-section, .contact-info-section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">Yumcki<span>fy</span></a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><a href="terms.html">Terms</a></li>
+                    <li><a href="cookies.html">Cookies</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="contact-hero">
+            <div class="container">
+                <h1>Let's Connect!</h1>
+                <p>Have a question, suggestion, or just want to share your yummiest creation? We'd love to hear from you!</p>
+            </div>
+        </section>
+
+        <section class="container contact-content">
+            <div class="contact-form-section">
+                <h2>Send Us a Message</h2>
+                <form class="contact-form" action="#" method="POST">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required placeholder="Enter your full name">
+
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" name="email" required placeholder="Enter your email address">
+
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" required placeholder="What's on your mind?">
+
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" required placeholder="Type your message here..."></textarea>
+
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+
+            <div class="contact-info-section">
+                <h2>Find Us & Reach Out</h2>
+                <p>We're always eager to connect with our vibrant Yumckify community. Whether you have a burning question about a recipe, a brilliant idea for a food challenge, or just want to say hello, don't hesitate to reach out!</p>
+
+                <p><strong>Email Us:</strong><br>
+                    For general inquiries: <a href="mailto:info@yumckify.com">info@yumckify.com</a><br>
+                    For support: <a href="mailto:support@yumckify.com">support@yumckify.com</a><br>
+                    For partnerships: <a href="mailto:partnerships@yumckify.com">partnerships@yumckify.com</a>
+                </p>
+
+                <p><strong>Call Us:</strong><br>
+                    Phone: +1 (555) Yum-Food (+1 555-986-3663)
+                </p>
+
+                <p><strong>Visit Our HQ (By Appointment Only):</strong><br>
+                    Yumckify Headquarters<br>
+                    123 Flavor Street<br>
+                    Culinary City, Foodie Land, 12345<br>
+                    [Your Country/Region]
+                </p>
+
+                <p><strong>Connect on Social Media:</strong><br>
+                    Follow us for daily doses of deliciousness, behind-the-scenes fun, and interactive challenges!
+                </p>
+
+
+                <div class="map-placeholder">
+                    [Placeholder for Google Map Embed]
+                    <br>
+                    (You can embed a map here using an iframe from Google Maps)
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-info">
+                <p>&copy; 2025 Yumckify. All rights reserved.</p>
+                <p>Turning Up the Yum Factor since 2025!</p>
+                <p>Yumckify HQ: 123 Flavor Street, Culinary City, Foodie Land, 12345</p>
+                <p>Email: info@yumckify.com</p>
+                <p>Phone: +1 (555) Yum-Food</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><a href="terms.html">Terms</a></li>
+                    <li><a href="cookies.html">Cookies</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+</body>
+</html>

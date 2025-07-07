@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yumckify Blog — Quick. Quirky. Yumified.</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Open+Sans:wght@400;700&display=swap');
+
+        :root {
+            --bold-mango-yellow: #FFCA28;
+            --candy-pink: #F06292;
+            --jet-black: #212121;
+            --cloud-white: #FAFAFA;
+            --electric-mint-green: #4DB6AC;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--jet-black);
+            background-color: var(--cloud-white);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- Header --- */
+        header {
+            background-color: var(--bold-mango-yellow);
+            padding: 20px 0;
+            color: var(--jet-black);
+            text-align: center;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-family: 'Fredoka One', cursive;
+            font-size: 2.5em;
+            color: var(--jet-black);
+            text-decoration: none;
+            line-height: 1;
+        }
+
+        .logo span {
+            color: var(--candy-pink);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        nav ul li a {
+            color: var(--jet-black);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--cloud-white);
+        }
+
+        /* --- Main Blog Content --- */
+        .blog-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://via.placeholder.com/1500x300/F06292/212121?text=Yumckify+Blog+Header') no-repeat center center/cover;
+            color: var(--cloud-white);
+            text-align: center;
+            padding: 80px 20px;
+            margin-bottom: 40px;
+        }
+
+        .blog-hero h1 {
+            font-family: 'Fredoka One', cursive;
+            font-size: 3.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .blog-hero p {
+            font-size: 1.2em;
+        }
+
+        .blog-layout {
+            display: grid;
+            grid-template-columns: 2.5fr 1fr; /* Main content wider than sidebar */
+            gap: 40px;
+            padding: 40px 0;
+        }
+
+        .main-content {
+            background-color: var(--cloud-white);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .blog-post-card {
+            background-color: var(--cloud-white);
+            border: 2px solid var(--electric-mint-green);
+            border-radius: 15px;
+            overflow: hidden;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .blog-post-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .blog-post-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-bottom: 2px solid var(--candy-pink);
+        }
+
+        .post-content {
+            padding: 25px;
+        }
+
+        .post-content h2 {
+            font-family: 'Fredoka One', cursive;
+            font-size: 2.2em;
+            color: var(--candy-pink);
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        .post-meta {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .post-meta span {
+            margin-right: 15px;
+        }
+
+        .post-meta .tag {
+            background-color: var(--electric-mint-green);
+            color: var(--jet-black);
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-weight: bold;
+        }
+
+        .post-content p {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            color: #444;
+        }
+
+        .read-more {
+            display: inline-block;
+            background-color: var(--bold-mango-yellow);
+            color: var(--jet-black);
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .read-more:hover {
+            background-color: #e6b01e; /* Darker yellow */
+        }
+
+        .sidebar {
+            background-color: var(--cloud-white);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .sidebar-widget {
+            margin-bottom: 30px;
+        }
+
+        .sidebar-widget h3 {
+            font-family: 'Fredoka One', cursive;
+            font-size: 1.8em;
+            color: var(--jet-black);
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .sidebar-widget h3::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: var(--candy-pink);
+            margin-top: 10px;
+            border-radius: 3px;
+        }
+
+        .sidebar-widget ul {
+            list-style: none;
+        }
+
+        .sidebar-widget ul li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar-widget ul li a {
+            color: #555;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .sidebar-widget ul li a:hover {
+            color: var(--candy-pink);
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: var(--jet-black);
+            color: var(--cloud-white);
+            padding: 40px 0;
+            text-align: center;
+            font-size: 0.9em;
+            margin-top: 60px; /* Space above footer */
+        }
+
+        footer .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        footer nav ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        footer nav ul li a {
+            color: var(--cloud-white);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer nav ul li a:hover {
+            color: var(--candy-pink);
+        }
+
+        .footer-info p {
+            margin-bottom: 5px;
+        }
+
+        /* --- Mobile Responsiveness --- */
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .blog-layout {
+                grid-template-columns: 1fr; /* Stack columns */
+                padding: 20px 0;
+            }
+
+            .main-content, .sidebar {
+                padding: 15px;
+            }
+
+            .blog-hero h1 {
+                font-size: 2.5em;
+            }
+
+            .blog-post-card img {
+                height: 200px;
+            }
+
+            .post-content h2 {
+                font-size: 1.8em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 2em;
+            }
+
+            .blog-hero h1 {
+                font-size: 2em;
+            }
+
+            .post-content h2 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">Yumcki<span>fy</span></a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><a href="terms.html">Terms</a></li>
+                    <li><a href="cookies.html">Cookies</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="blog-hero">
+            <div class="container">
+                <h1>The Yumckify Blog</h1>
+                <p>Your daily dose of bold flavors, creative twists, and culinary inspiration!</p>
+            </div>
+        </section>
+
+        <section class="container blog-layout">
+            <div class="main-content">
+                <article class="blog-post-card">
+                    <img src="b1.webp" alt="Delicious Viral Recipe">
+                    <div class="post-content">
+                        <h2>Mastering the Art of Viral Food Challenges</h2>
+                        <div class="post-meta">
+                            <span>By **Chef Yum**</span>
+                            <span>On July 4, 2025</span>
+                            <span class="tag">#FoodChallenges</span>
+                            <span class="tag">#Viral</span>
+                        </div>
+                        <p>Ever wondered how those incredible food challenges go viral? We dive deep into the secrets behind creating shareable, jaw-dropping culinary feats that get everyone talking. Learn how to pick your ingredients, set the stage, and film your masterpiece for maximum impact. From giant pizzas to multi-layered desserts, get ready to challenge your skills and delight your followers! We'll cover everything from conceptualization to execution, ensuring your next food challenge is a massive hit. Don't just cook, create a culinary spectacle that defines deliciousness!</p>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </article>
+
+                <article class="blog-post-card">
+                    <img src="b2.webp" alt="Creative Mashup Recipe">
+                    <div class="post-content">
+                        <h2>The Unexpected Deliciousness of Sweet & Savory Mashups</h2>
+                        <div class="post-meta">
+                            <span>By **Flavor Fanatic**</span>
+                            <span>On June 28, 2025</span>
+                            <span class="tag">#Mashups</span>
+                            <span class="tag">#SweetSavory</span>
+                        </div>
+                        <p>Pineapple on pizza? That's just the beginning! This post explores the exciting world of sweet and savory food mashups that will blow your mind and tantalize your taste buds. We're talking about everything from chocolate-dipped bacon to balsamic strawberry grilled cheese. Discover the science behind these intriguing flavor combinations and get inspired to create your own unique culinary masterpieces. Prepare to redefine your comfort food boundaries!</p>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </article>
+
+                <article class="blog-post-card">
+                    <img src="b3.webp" alt="Fast Meal Prep Tips">
+                    <div class="post-content">
+                        <h2>5 Game-Changing Tips for Ultra-Fast Meal Prep</h2>
+                        <div class="post-meta">
+                            <span>By **Speedy Chef**</span>
+                            <span>On June 20, 2025</span>
+                            <span class="tag">#QuickMeals</span>
+                            <span class="tag">#MealPrep</span>
+                        </div>
+                        <p>Short on time but big on hunger? This blog post is your ultimate guide to revolutionizing your kitchen routine with 5 game-changing tips for ultra-fast meal prep. Learn clever shortcuts, smart ingredient hacks, and efficient cooking techniques that will have delicious, homemade meals on your table in record time. Say goodbye to takeout and hello to healthy, speedy delights!</p>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </article>
+
+                <p style="margin-top: 40px; color: #666; text-align: center;">
+                    This is just a small sample of the vibrant content you'd find on the Yumckify Blog.
+                    Imagine pages upon pages of articles, guides, interviews, and deep dives into the
+                    world of bold flavors and creative cooking. We'd cover everything from the latest
+                    TikTok food trends to sustainable cooking tips, from culinary science simplified
+                    to behind-the-scenes glimpses of our recipe development. Every article would be
+                    designed to inspire, educate, and entertain, ensuring you always have something
+                    exciting to read and try in your kitchen. Expect comprehensive reviews of new kitchen gadgets,
+                    seasonal ingredient spotlights, and in-depth explorations of global food cultures
+                    with a quirky Yumckify twist. Our goal is to make the blog a dynamic hub
+                    for food enthusiasts who crave knowledge as much as delicious meals.
+                    We'll feature guest posts from renowned food bloggers and social media influencers,
+                    share success stories from our community challenges, and provide exclusive previews
+                    of upcoming Yumckify Originals. This is where the story of "turning up the yum factor" truly unfolds.
+                    Stay tuned for a continuous flow of fresh, engaging, and utterly delectable content!
+                </p>
+
+            </div>
+
+            <aside class="sidebar">
+                <div class="sidebar-widget">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="#">Quick Meals (12)</a></li>
+                        <li><a href="#">Mashup Mania (8)</a></li>
+                        <li><a href="#">Food Challenges (5)</a></li>
+                        <li><a href="#">Yumckify Originals (10)</a></li>
+                        <li><a href="#">Snack Hacks (7)</a></li>
+                        <li><a href="#">Dessert Delights (6)</a></li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-widget">
+                    <h3>Popular Posts</h3>
+                    <ul>
+                        <li><a href="#">The Art of the 15-Minute Gourmet Meal</a></li>
+                        <li><a href="#">Why Everyone's Obsessed with Our Rainbow Toast</a></li>
+                        <li><a href="#">Your Guide to Winning Any Cooking Challenge</a></li>
+                        <li><a href="#">Decoding the Secret to Perfect Air Fryer Snacks</a></li>
+                        <li><a href="#">Global Flavors, Local Kitchens: A Fusion Journey</a></li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-widget">
+                    <h3>Follow Us!</h3>
+                    <p style="font-size: 0.9em; color: #555;">Join the Yum Crew on social media for daily dose of deliciousness!</p>
+                </div>
+            </aside>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-info">
+                <p>&copy; 2025 Yumckify. All rights reserved.</p>
+                <p>Turning Up the Yum Factor since 2025!</p>
+                <p>Yumckify HQ: 123 Flavor Street, Culinary City, Foodie Land, 12345</p>
+                <p>Email: info@yumckify.com</p>
+                <p>Phone: +1 (555) Yum-Food</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><a href="terms.html">Terms</a></li>
+                    <li><a href="cookies.html">Cookies</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+</body>
+</html>

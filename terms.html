@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yumckify Terms of Service</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Open+Sans:wght@400;700&display=swap');
+
+        :root {
+            --bold-mango-yellow: #FFCA28;
+            --candy-pink: #F06292;
+            --jet-black: #212121;
+            --cloud-white: #FAFAFA;
+            --electric-mint-green: #4DB6AC;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.8; /* Increased line height for better readability of long text */
+            color: var(--jet-black);
+            background-color: var(--cloud-white);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- Header --- */
+        header {
+            background-color: var(--bold-mango-yellow);
+            padding: 20px 0;
+            color: var(--jet-black);
+            text-align: center;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-family: 'Fredoka One', cursive;
+            font-size: 2.5em;
+            color: var(--jet-black);
+            text-decoration: none;
+            line-height: 1;
+        }
+
+        .logo span {
+            color: var(--candy-pink);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        nav ul li a {
+            color: var(--jet-black);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--cloud-white);
+        }
+
+        /* --- Terms of Service Content --- */
+        .terms-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://via.placeholder.com/1500x300/F06292/212121?text=Terms+of+Service') no-repeat center center/cover;
+            color: var(--cloud-white);
+            text-align: center;
+            padding: 80px 20px;
+            margin-bottom: 40px;
+        }
+
+        .terms-hero h1 {
+            font-family: 'Fredoka One', cursive;
+            font-size: 3.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .terms-hero p {
+            font-size: 1.2em;
+        }
+
+        .terms-content {
+            padding: 40px 0;
+        }
+
+        .terms-content h2 {
+            font-family: 'Fredoka One', cursive;
+            font-size: 2.5em;
+            color: var(--electric-mint-green);
+            margin-bottom: 25px;
+            margin-top: 40px;
+            position: relative;
+        }
+
+        .terms-content h2::after {
+            content: '';
+            display: block;
+            width: 70px;
+            height: 4px;
+            background-color: var(--bold-mango-yellow);
+            margin-top: 10px;
+            border-radius: 3px;
+        }
+
+        .terms-content h3 {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1.8em;
+            color: var(--jet-black);
+            margin-bottom: 15px;
+            margin-top: 30px;
+        }
+
+        .terms-content p {
+            margin-bottom: 20px;
+            font-size: 1.05em;
+            color: #333;
+        }
+
+        .terms-content ul {
+            list-style: disc;
+            margin-left: 25px;
+            margin-bottom: 20px;
+        }
+
+        .terms-content ul li {
+            margin-bottom: 10px;
+            font-size: 1.05em;
+            color: #333;
+        }
+
+        .terms-content ol {
+            list-style: decimal;
+            margin-left: 25px;
+            margin-bottom: 20px;
+        }
+
+        .terms-content ol li {
+            margin-bottom: 10px;
+            font-size: 1.05em;
+            color: #333;
+        }
+
+        .terms-content strong {
+            color: var(--jet-black);
+        }
+
+        .terms-content a {
+            color: var(--candy-pink);
+            text-decoration: underline;
+            transition: color 0.3s ease;
+        }
+
+        .terms-content a:hover {
+            color: #d15682;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: var(--jet-black);
+            color: var(--cloud-white);
+            padding: 40px 0;
+            text-align: center;
+            font-size: 0.9em;
+            margin-top: 60px;
+        }
+
+        footer .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        footer nav ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        footer nav ul li a {
+            color: var(--cloud-white);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer nav ul li a:hover {
+            color: var(--candy-pink);
+        }
+
+        .footer-info p {
+            margin-bottom: 5px;
+        }
+
+        /* --- Mobile Responsiveness --- */
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .terms-hero h1 {
+                font-size: 2.5em;
+            }
+
+            .terms-content h2 {
+                font-size: 2em;
+            }
+
+            .terms-content h3 {
+                font-size: 1.5em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 2em;
+            }
+
+            .terms-hero h1 {
+                font-size: 2em;
+            }
+
+            .terms-content h2 {
+                font-size: 1.8em;
+            }
+
+            .terms-content h3 {
+                font-size: 1.3em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">Yumcki<span>fy</span></a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><a href="terms.html">Terms</a></li>
+                    <li><a href="cookies.html">Cookies</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="terms-hero">
+            <div class="container">
+                <h1>Yumckify Terms of Service</h1>
+                <p>By using our platform, you agree to these terms. Let's keep it fun and fair!</p>
+            </div>
+        </section>
+
+        <section class="container terms-content">
+            <h2>Terms of Service</h2>
+            <p><strong>Last Updated: July 4, 2025</strong></p>
+            <p>
+                Welcome to Yumckify ("we," "our," or "us"). These Terms of Service ("Terms") govern your access to and use of the Yumckify website, Yumckify.com (the "Site"), and any related services, features, content, applications, or products offered by Yumckify (collectively, the "Services"). By accessing or using the Site or Services, you agree to be bound by these Terms and our <a href="privacy.html">Privacy Policy</a>. If you do not agree to these Terms, you may not access or use the Site or Services.
+            </p>
+            <p>
+                Please read these Terms carefully before using our Services. They contain important information about your legal rights, obligations, and remedies. These Terms constitute a legally binding agreement between you and Yumckify. We reserve the right to modify these Terms at any time, and your continued use of the Site or Services after such modifications will constitute your acceptance of the updated Terms. We will notify you of significant changes by posting the new Terms on this page and updating the "Last Updated" date.
+            </p>
+
+            <h3>1. Eligibility and Account Registration</h3>
+            <p>
+                To access certain features of the Site and Services, such as uploading recipes or participating in challenges, you may need to register for an account.
+            </p>
+            <ul>
+                <li><strong>Age Requirement:</strong> You must be at least 13 years old to create an account and use our Services. If you are between 13 and 18 years old, you represent that you have obtained parental or guardian consent to use the Services.</li>
+                <li><strong>Account Information:</strong> When registering, you agree to provide accurate, current, and complete information as prompted by our registration forms. You are responsible for maintaining the confidentiality of your account password and for all activities that occur under your account. You agree to notify us immediately of any unauthorized use of your account or any other breach of security.</li>
+                <li><strong>Account Security:</strong> You are solely responsible for all activities that occur under your account, whether or not you know about them. Yumckify will not be liable for any loss or damage arising from your failure to comply with this section.</li>
+            </ul>
+
+            <h3>2. User Content</h3>
+            <p>
+                Our Services allow you to upload, submit, store, send, and receive content, including recipes, photos, videos, comments, and other materials ("User Content").
+            </p>
+            <ul>
+                <li><strong>Ownership:</strong> You retain all ownership rights in your User Content. Yumckify does not claim any ownership over your User Content.</li>
+                <li><strong>License to Yumckify:</strong> By submitting User Content to the Site or Services, you grant Yumckify a worldwide, non-exclusive, royalty-free, transferable, and sublicensable license to use, reproduce, distribute, prepare derivative works of, display, and perform your User Content in connection with the Services and Yumckify's (and its successors' and affiliates') business, including without limitation for promoting and redistributing part or all of the Service (and derivative works thereof) in any media formats and through any media channels. This license includes, but is not limited to, using your User Content for marketing, advertising, and promotional purposes related to Yumckify.</li>
+                <li><strong>Representations and Warranties:</strong> You represent and warrant that: (i) you own the User Content submitted by you or otherwise have the right to grant the license set forth above, and (ii) the posting and use of your User Content on or through the Services does not violate the privacy rights, publicity rights, copyrights, contract rights, intellectual property rights, or any other rights of any person.</li>
+                <li><strong>Prohibited Content:</strong> You agree not to post, upload, or transmit any User Content that:
+                    <ul>
+                        <li>Is unlawful, harmful, threatening, abusive, harassing, defamatory, vulgar, obscene, libelous, invasive of another's privacy, hateful, or racially, ethnically, or otherwise objectionable.</li>
+                        <li>Infringes any patent, trademark, trade secret, copyright, or other proprietary rights of any party.</li>
+                        <li>Contains software viruses or any other computer code, files, or programs designed to interrupt, destroy, or limit the functionality of any computer software or hardware or telecommunications equipment.</li>
+                        <li>Constitutes unsolicited or unauthorized advertising, promotional materials, "junk mail," "spam," "chain letters," "pyramid schemes," or any other form of solicitation.</li>
+                        <li>Impersonates any person or entity, including, but not limited to, a Yumckify official, forum leader, guide, or host, or falsely states or otherwise misrepresents your affiliation with a person or entity.</li>
+                        <li>Is false, misleading, or deceptive.</li>
+                    </ul>
+                </li>
+                <li><strong>Content Moderation:</strong> Yumckify reserves the right, but is not obligated, to monitor, review, or remove User Content at its sole discretion, without prior notice, if it violates these Terms or is otherwise objectionable.</li>
+            </ul>
+
+            <h3>3. Intellectual Property Rights</h3>
+            <p>
+                All content on the Site and Services (excluding User Content), including but not limited to text, graphics, logos, icons, images, audio clips, video clips, data compilations, and software, and the compilation thereof, is the property of Yumckify or its content suppliers and is protected by international copyright laws.
+            </p>
+            <ul>
+                <li><strong>Yumckify Trademarks:</strong> The Yumckify name, logo, taglines ("Turn Up the Yum Factor!", "Quick. Quirky. Yumified.", "Your Recipe Feed for Bold Cravings."), and all related names, logos, product and service names, designs, and slogans are trademarks of Yumckify or its affiliates or licensors. You must not use such marks without the prior written permission of Yumckify.</li>
+                <li><strong>Limited License to You:</strong> Subject to your compliance with these Terms, Yumckify grants you a limited, non-exclusive, non-transferable, non-sublicensable license to access and use the Site and Services for your personal, non-commercial use. This license does not include any right to: (a) resell or make any commercial use of the Site or Services; (b) collect and use any product listings, descriptions, or prices; (c) make any derivative use of the Site or Services; (d) download or copy account information for the benefit of another merchant; or (e) use any data mining, robots, or similar data gathering and extraction tools.</li>
+            </ul>
+
+            <h3>4. Prohibited Uses</h3>
+            <p>
+                You may use the Site and Services only for lawful purposes and in accordance with these Terms. You agree not to use the Site or Services:
+            </p>
+            <ul>
+                <li>In any way that violates any applicable federal, state, local, or international law or regulation.</li>
+                <li>For the purpose of exploiting, harming, or attempting to exploit or harm minors in any way by exposing them to inappropriate content, asking for personally identifiable information, or otherwise.</li>
+                <li>To transmit, or procure the sending of, any advertising or promotional material without our prior written consent, including any "junk mail," "chain letter," "spam," or any other similar solicitation.</li>
+                <li>To impersonate or attempt to impersonate Yumckify, a Yumckify employee, another user, or any other person or entity.</li>
+                <li>To engage in any other conduct that restricts or inhibits anyone's use or enjoyment of the Site or Services, or which, as determined by us, may harm Yumckify or users of the Site or Services, or expose them to liability.</li>
+            </ul>
+            <p>Additionally, you agree not to:</p>
+            <ul>
+                <li>Use the Site or Services in any manner that could disable, overburden, damage, or impair the Site or interfere with any other party's use of the Site or Services.</li>
+                <li>Use any robot, spider, or other automatic device, process, or means to access the Site or Services for any purpose, including monitoring or copying any of the material on the Site.</li>
+                <li>Use any manual process to monitor or copy any of the material on the Site or for any other unauthorized purpose without our prior written consent.</li>
+                <li>Use any device, software, or routine that interferes with the proper working of the Site or Services.</li>
+                <li>Introduce any viruses, Trojan horses, worms, logic bombs, or other material that is malicious or technologically harmful.</li>
+                <li>Attempt to gain unauthorized access to, interfere with, damage, or disrupt any parts of the Site or Services, the server on which the Site is stored, or any server, computer, or database connected to the Site.</li>
+                <li>Attack the Site via a denial-of-service attack or a distributed denial-of-service attack.</li>
+                <li>Otherwise attempt to interfere with the proper working of the Site or Services.</li>
+            </ul>
+
+            <h3>5. Disclaimer of Warranties</h3>
+            <p>
+                YOU EXPRESSLY UNDERSTAND AND AGREE THAT YOUR USE OF THE SITE AND SERVICES IS AT YOUR SOLE RISK. THE SITE AND SERVICES ARE PROVIDED ON AN "AS IS" AND "AS AVAILABLE" BASIS. YUMCKIFY EXPRESSLY DISCLAIMS ALL WARRANTIES OF ANY KIND, WHETHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.
+            </p>
+            <p>
+                YUMCKIFY MAKES NO WARRANTY THAT: (I) THE SITE OR SERVICES WILL MEET YOUR REQUIREMENTS; (II) THE SITE OR SERVICES WILL BE UNINTERRUPTED, TIMELY, SECURE, OR ERROR-FREE; (III) THE RESULTS THAT MAY BE OBTAINED FROM THE USE OF THE SITE OR SERVICES WILL BE ACCURATE OR RELIABLE; (IV) THE QUALITY OF ANY PRODUCTS, SERVICES, INFORMATION, OR OTHER MATERIAL PURCHASED OR OBTAINED BY YOU THROUGH THE SITE OR SERVICES WILL MEET YOUR EXPECTATIONS; AND (V) ANY ERRORS IN THE SOFTWARE WILL BE CORRECTED.
+            </p>
+            <p>
+                ANY MATERIAL DOWNLOADED OR OTHERWISE OBTAINED THROUGH THE USE OF THE SITE OR SERVICES IS ACCESSED AT YOUR OWN DISCRETION AND RISK, AND YOU WILL BE SOLELY RESPONSIBLE FOR ANY DAMAGE TO YOUR COMPUTER SYSTEM OR LOSS OF DATA THAT RESULTS FROM THE DOWNLOAD OF ANY SUCH MATERIAL.
+            </p>
+            <p>
+                NO ADVICE OR INFORMATION, WHETHER ORAL OR WRITTEN, OBTAINED BY YOU FROM YUMCKIFY OR THROUGH OR FROM THE SITE OR SERVICES SHALL CREATE ANY WARRANTY NOT EXPRESSLY STATED IN THESE TERMS.
+            </p>
+
+            <h3>6. Limitation of Liability</h3>
+            <p>
+                TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL YUMCKIFY, ITS AFFILIATES, OFFICERS, DIRECTORS, EMPLOYEES, AGENTS, SUPPLIERS, OR LICENSORS BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR EXEMPLARY DAMAGES, INCLUDING BUT NOT LIMITED TO, DAMAGES FOR LOSS OF PROFITS, GOODWILL, USE, DATA, OR OTHER INTANGIBLE LOSSES (EVEN IF YUMCKIFY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES), RESULTING FROM: (I) THE USE OR THE INABILITY TO USE THE SITE OR SERVICES; (II) THE COST OF PROCUREMENT OF SUBSTITUTE GOODS AND SERVICES RESULTING FROM ANY GOODS, DATA, INFORMATION, OR SERVICES PURCHASED OR OBTAINED OR MESSAGES RECEIVED OR TRANSACTIONS ENTERED INTO THROUGH OR FROM THE SITE OR SERVICES; (III) UNAUTHORIZED ACCESS TO OR ALTERATION OF YOUR TRANSMISSIONS OR DATA; (IV) STATEMENTS OR CONDUCT OF ANY THIRD PARTY ON THE SITE OR SERVICES; OR (V) ANY OTHER MATTER RELATING TO THE SITE OR SERVICES.
+            </p>
+            <p>
+                IN NO EVENT SHALL YUMCKIFY'S TOTAL LIABILITY TO YOU FOR ALL DAMAGES, LOSSES, AND CAUSES OF ACTION (WHETHER IN CONTRACT, TORT (INCLUDING BUT NOT LIMITED TO NEGLIGENCE), OR OTHERWISE) EXCEED THE AMOUNT PAID BY YOU, IF ANY, FOR ACCESSING THE SITE OR SERVICES DURING THE TWELVE (12) MONTHS IMMEDIATELY PRECEDING THE DATE OF THE CLAIM, OR ONE HUNDRED DOLLARS ($100.00), WHICHEVER IS GREATER.
+            </p>
+            <p>
+                SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OF CERTAIN WARRANTIES OR THE LIMITATION OR EXCLUSION OF LIABILITY FOR INCIDENTAL OR CONSEQUENTIAL DAMAGES. ACCORDINGLY, SOME OF THE ABOVE LIMITATIONS MAY NOT APPLY TO YOU.
+            </p>
+
+            <h3>7. Indemnification</h3>
+            <p>
+                You agree to indemnify, defend, and hold harmless Yumckify, its affiliates, licensors, and service providers, and its and their respective officers, directors, employees, contractors, agents, licensors, suppliers, successors, and assigns from and against any claims, liabilities, damages, judgments, awards, losses, costs, expenses, or fees (including reasonable attorneys' fees) arising out of or relating to:
+            </p>
+            <ul>
+                <li>Your violation of these Terms of Service.</li>
+                <li>Your use of the Site or Services, including, but not limited to, your User Content, any use of the Site's content, services, and products other than as expressly authorized in these Terms.</li>
+                <li>Your violation of any rights of another party, including but not limited to any intellectual property rights or privacy rights.</li>
+            </ul>
+
+            <h3>8. Links to Other Websites</h3>
+            <p>
+                The Site and Services may contain links to third-party websites or services that are not owned or controlled by Yumckify. Yumckify has no control over, and assumes no responsibility for, the content, privacy policies, or practices of any third-party websites or services. We do not warrant the offerings of any of these entities/individuals or their websites.
+            </p>
+            <p>
+                You acknowledge and agree that Yumckify shall not be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with the use of or reliance on any such content, goods, or services available on or through any such third-party websites or services. We strongly advise you to read the terms and conditions and privacy policies of any third-party websites or services that you visit.
+            </p>
+
+            <h3>9. Termination</h3>
+            <p>
+                We may terminate or suspend your account and bar access to the Services immediately, without prior notice or liability, under our sole discretion, for any reason whatsoever and without limitation, including but not limited to a breach of the Terms.
+            </p>
+            <p>
+                If you wish to terminate your account, you may simply discontinue using the Services or contact us to request account deletion.
+            </p>
+            <p>
+                All provisions of the Terms which by their nature should survive termination shall survive termination, including, without limitation, ownership provisions, warranty disclaimers, indemnity, and limitations of liability.
+            </p>
+
+            <h3>10. Governing Law and Jurisdiction</h3>
+            <p>
+                These Terms shall be governed and construed in accordance with the laws of [Your Jurisdiction/Country, e.g., the State of California, USA], without regard to its conflict of law provisions.
+            </p>
+            <p>
+                Our failure to enforce any right or provision of these Terms will not be considered a waiver of those rights. If any provision of these Terms is held to be invalid or unenforceable by a court, the remaining provisions of these Terms will remain in effect. These Terms constitute the entire agreement between us regarding our Service and supersede and replace any prior agreements we might have had between us regarding the Service.
+            </p>
+
+            <h3>11. Severability</h3>
+            <p>
+                If any provision of these Terms is found to be unenforceable or invalid, that provision will be limited or eliminated to the minimum extent necessary so that these Terms will otherwise remain in full force and effect and enforceable.
+            </p>
+
+            <h3>12. Entire Agreement</h3>
+            <p>
+                These Terms and our <a href="privacy.html">Privacy Policy</a> constitute the entire and exclusive understanding and agreement between Yumckify and you regarding the Services, and these Terms supersede and replace all prior oral or written understandings or agreements between Yumckify and you regarding the Services.
+            </p>
+
+            <h3>13. Contact Us</h3>
+            <p>
+                If you have any questions about these Terms, please contact us:
+            </p>
+            <ul>
+                <li><strong>Email:</strong> support@yumckify.com</li>
+                <li><strong>Mailing Address:</strong><br>
+                    Yumckify Legal Department<br>
+                    123 Flavor Street<br>
+                    Culinary City, Foodie Land, 12345<br>
+                    [Your Country/Region]
+                </li>
+            </ul>
+            <p>
+                We are committed to providing a clear and fair framework for our community. Your understanding and adherence to these Terms ensure a positive and safe environment for all Yumckify users.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-info">
+                <p>&copy; 2025 Yumckify. All rights reserved.</p>
+                <p>Turning Up the Yum Factor since 2025!</p>
+                <p>Yumckify HQ: 123 Flavor Street, Culinary City, Foodie Land, 12345</p>
+                <p>Email: info@yumckify.com</p>
+                <p>Phone: +1 (555) Yum-Food</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><a href="terms.html">Terms</a></li>
+                    <li><a href="cookies.html">Cookies</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+</body>
+</html>

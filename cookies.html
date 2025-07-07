@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yumckify Cookies Policy</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Open+Sans:wght@400;700&display=swap');
+
+        :root {
+            --bold-mango-yellow: #FFCA28;
+            --candy-pink: #F06292;
+            --jet-black: #212121;
+            --cloud-white: #FAFAFA;
+            --electric-mint-green: #4DB6AC;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.8; /* Increased line height for better readability of long text */
+            color: var(--jet-black);
+            background-color: var(--cloud-white);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- Header --- */
+        header {
+            background-color: var(--bold-mango-yellow);
+            padding: 20px 0;
+            color: var(--jet-black);
+            text-align: center;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-family: 'Fredoka One', cursive;
+            font-size: 2.5em;
+            color: var(--jet-black);
+            text-decoration: none;
+            line-height: 1;
+        }
+
+        .logo span {
+            color: var(--candy-pink);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        nav ul li a {
+            color: var(--jet-black);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--cloud-white);
+        }
+
+        /* --- Cookies Hero Section --- */
+        .cookies-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://via.placeholder.com/1500x300/F06292/212121?text=Cookie+Crunch+Policy') no-repeat center center/cover;
+            color: var(--cloud-white);
+            text-align: center;
+            padding: 80px 20px;
+            margin-bottom: 40px;
+        }
+
+        .cookies-hero h1 {
+            font-family: 'Fredoka One', cursive;
+            font-size: 3.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .cookies-hero p {
+            font-size: 1.2em;
+        }
+
+        /* --- Cookies Policy Content --- */
+        .cookies-content {
+            padding: 40px 0;
+        }
+
+        .cookies-content h2 {
+            font-family: 'Fredoka One', cursive;
+            font-size: 2.5em;
+            color: var(--electric-mint-green);
+            margin-bottom: 25px;
+            margin-top: 40px;
+            position: relative;
+        }
+
+        .cookies-content h2::after {
+            content: '';
+            display: block;
+            width: 70px;
+            height: 4px;
+            background-color: var(--bold-mango-yellow);
+            margin-top: 10px;
+            border-radius: 3px;
+        }
+
+        .cookies-content h3 {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1.8em;
+            color: var(--jet-black);
+            margin-bottom: 15px;
+            margin-top: 30px;
+        }
+
+        .cookies-content h4 {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1.4em;
+            color: var(--candy-pink);
+            margin-bottom: 10px;
+            margin-top: 25px;
+        }
+
+        .cookies-content p {
+            margin-bottom: 20px;
+            font-size: 1.05em;
+            color: #333;
+        }
+
+        .cookies-content ul {
+            list-style: disc;
+            margin-left: 25px;
+            margin-bottom: 20px;
+        }
+
+        .cookies-content ul li {
+            margin-bottom: 10px;
+            font-size: 1.05em;
+            color: #333;
+        }
+
+        .cookies-content ol {
+            list-style: decimal;
+            margin-left: 25px;
+            margin-bottom: 20px;
+        }
+
+        .cookies-content ol li {
+            margin-bottom: 10px;
+            font-size: 1.05em;
+            color: #333;
+        }
+
+        .cookies-content strong {
+            color: var(--jet-black);
+        }
+
+        .cookies-content a {
+            color: var(--candy-pink);
+            text-decoration: underline;
+            transition: color 0.3s ease;
+        }
+
+        .cookies-content a:hover {
+            color: #d15682;
+        }
+
+        /* --- Cookie Consent Dialogue Box --- */
+        .cookie-consent-box {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--jet-black);
+            color: var(--cloud-white);
+            padding: 25px 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.4);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            z-index: 1000;
+            max-width: 90%;
+            text-align: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+
+        .cookie-consent-box.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .cookie-consent-box p {
+            font-size: 1em;
+            line-height: 1.4;
+            margin-bottom: 0; /* Override default paragraph margin */
+        }
+
+        .cookie-consent-box .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .cookie-consent-box button {
+            background-color: var(--bold-mango-yellow);
+            color: var(--jet-black);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            white-space: nowrap; /* Prevent text wrapping on buttons */
+        }
+
+        .cookie-consent-box button:hover {
+            background-color: #e6b01e;
+            transform: translateY(-2px);
+        }
+
+        .cookie-consent-box button.decline {
+            background-color: var(--candy-pink);
+            color: var(--cloud-white);
+        }
+
+        .cookie-consent-box button.decline:hover {
+            background-color: #d15682;
+        }
+
+
+        /* --- Footer --- */
+        footer {
+            background-color: var(--jet-black);
+            color: var(--cloud-white);
+            padding: 40px 0;
+            text-align: center;
+            font-size: 0.9em;
+            margin-top: 60px;
+        }
+
+        footer .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        footer nav ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        footer nav ul li a {
+            color: var(--cloud-white);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer nav ul li a:hover {
+            color: var(--candy-pink);
+        }
+
+        .footer-info p {
+            margin-bottom: 5px;
+        }
+
+        /* --- Mobile Responsiveness --- */
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .cookies-hero h1 {
+                font-size: 2.5em;
+            }
+
+            .cookies-content h2 {
+                font-size: 2em;
+            }
+
+            .cookies-content h3 {
+                font-size: 1.5em;
+            }
+
+            .cookies-content h4 {
+                font-size: 1.2em;
+            }
+
+            .cookie-consent-box {
+                padding: 20px;
+                bottom: 10px;
+            }
+
+            .cookie-consent-box .buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .cookie-consent-box button {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 2em;
+            }
+
+            .cookies-hero h1 {
+                font-size: 2em;
+            }
+
+            .cookies-content h2 {
+                font-size: 1.8em;
+            }
+
+            .cookies-content h3 {
+                font-size: 1.3em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">Yumcki<span>fy</span></a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><a href="terms.html">Terms</a></li>
+                    <li><a href="cookies.html">Cookies</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="cookies-hero">
+            <div class="container">
+                <h1>Yumckify Cookies Policy</h1>
+                <p>Understanding how we use cookies to enhance your delicious experience.</p>
+            </div>
+        </section>
+
+        <section class="container cookies-content">
+            <h2>Our Commitment to Cookie Transparency</h2>
+            <p><strong>Last Updated: July 4, 2025</strong></p>
+            <p>
+                At Yumckify, we believe in transparency, especially when it comes to how we use technologies like cookies on our website, Yumckify.com (the "Site"). This Cookies Policy provides a comprehensive overview of what cookies are, how we use them, the different types of cookies you might encounter, and your choices regarding their use. We want you to feel informed and in control of your data as you explore our world of bold flavors and creative recipes. Your privacy is paramount, and this policy is designed to complement our broader <a href="privacy.html">Privacy Policy</a> by focusing specifically on our cookie practices. By continuing to use our Site, you consent to the use of cookies in accordance with this policy.
+            </p>
+            <p>
+                We understand that the world of digital tracking can be complex, and our aim is to demystify it for you. This document will break down the technical jargon into clear, understandable language, ensuring you grasp why and how cookies contribute to your overall experience on Yumckify. From remembering your login details to suggesting recipes you might love, cookies play a vital role in making our platform intuitive and personalized. We are committed to using these technologies responsibly, always with your best interests and data security in mind.
+            </p>
+
+            <h3>1. What Are Cookies? A Deep Dive into Digital Crumbs</h3>
+            <p>
+                Cookies are small text files that are placed on your computer or mobile device when you visit a website. They are widely used to make websites work more efficiently, as well as to provide reporting information and to remember information about you, such as your login details or language preferences. Think of them as tiny digital notes that a website leaves on your device to remember you for future visits. These notes allow the website to recognize your browser and capture certain information.
+            </p>
+            <p>
+                They are not programs and cannot carry viruses or install malware. Cookies are simply data files that store information about your browsing session. This information can be retrieved by the website that placed the cookie during subsequent visits. This capability is fundamental to modern web browsing, enabling features like shopping carts, personalized content, and user authentication without requiring you to re-enter information repeatedly. The data within a cookie is typically a string of text and numbers, which acts as a unique identifier for your browser.
+            </p>
+
+            <h3>2. How Yumckify Uses Cookies: Enhancing Your Culinary Journey</h3>
+            <p>
+                Yumckify uses cookies for a variety of purposes, all aimed at enhancing your experience, ensuring the functionality of our Site, and understanding how our content resonates with you. Our use of cookies falls into several key categories, each contributing to a seamless and personalized browsing journey. We leverage these small files to optimize performance, remember your preferences, and deliver more relevant content.
+            </p>
+            <h4>2.1. Essential Site Functionality</h4>
+            <p>
+                These cookies are absolutely necessary for the Site to function properly. Without them, certain core services you request, such as logging into your account, adding items to a shopping cart in "Shop the Yum," or remembering your consent preferences, would not be possible. They enable basic navigation and access to secure areas of the website. For example, when you log in, an essential cookie ensures you remain logged in as you move between different pages, preventing the need to re-authenticate for every action. These cookies are typically session-based and expire when you close your browser. They do not collect any personal information for marketing purposes and are crucial for the basic operation of the Site.
+            </p>
+            <h4>2.2. Performance and Analytics</h4>
+            <p>
+                We use performance and analytics cookies to collect information about how visitors use our Site. This data helps us understand which recipes are most popular, how users navigate through our content, and if they encounter any errors. By analyzing this information, we can continuously improve the structure, content, and overall user experience of Yumckify. For instance, these cookies might track the average time spent on a recipe page, the bounce rate, or the conversion rate for a call-to-action button. The information collected is typically aggregated and anonymized, meaning it cannot be used to identify you personally. It provides valuable insights into the Site's performance, allowing us to optimize loading times, streamline navigation, and ensure our content is engaging and accessible.
+            </p>
+            <h4>2.3. Personalization and Preferences</h4>
+            <p>
+                Preference cookies allow our Site to remember choices you make (such as your username, language, or region) and provide enhanced, more personal features. For example, if you set a preference for "vegetarian recipes," these cookies can remember that choice, ensuring that future recommendations prioritize vegetarian options. They can also be used to remember changes you have made to text size, fonts, and other customizable parts of web pages. These cookies can also remember your dietary preferences or favorite categories, making your next visit even more tailored to your tastes. By remembering your settings, these cookies save you time and effort, making your interaction with Yumckify more efficient and enjoyable. They are designed to enhance your individual experience on the Site.
+            </p>
+            <h4>2.4. Advertising and Marketing</h4>
+            <p>
+                Advertising cookies are used to deliver advertisements that are more relevant to you and your interests. They are also used to limit the number of times you see an advertisement and help measure the effectiveness of advertising campaigns. These cookies are usually placed by advertising networks with our permission. They remember that you have visited a website and this information is shared with other organizations, such as advertisers. This allows us to show you ads for kitchen gadgets or ingredients that align with your culinary interests, rather than generic advertisements. They track your browsing habits across different websites to build a profile of your interests, which is then used to serve targeted ads. This helps us generate revenue to keep Yumckify running and provide free content.
+            </p>
+            <h4>2.5. Social Media Integration</h4>
+            <p>
+                Yumckify integrates with various social media platforms (like Instagram, TikTok, Facebook) to allow you to share content easily or interact with our social media presence. Cookies from these third-party social media sites are used to enable these sharing functionalities and to track your interactions with our content on those platforms. For example, if you click a "Share to TikTok" button, the social media cookie facilitates that action. These cookies are governed by the privacy policies of the respective social media companies. They can also be used to understand how our content performs on social channels and to tailor our social media marketing efforts.
+            </p>
+
+            <h3>3. Types of Cookies We Use: A Detailed Breakdown</h3>
+            <p>
+                Cookies come in various forms, each serving a distinct purpose. Understanding these different types will give you a clearer picture of how they operate on Yumckify and contribute to your overall user experience.
+            </p>
+            <h4>3.1. Session Cookies</h4>
+            <p>
+                Session cookies are temporary cookies that remain on your device only for the duration of your browsing session. They are automatically deleted from your device when you close your web browser. These cookies are essential for the proper functioning of the Site during a single visit. For instance, they might remember items you've added to a shopping cart or keep you logged in as you navigate between pages. They do not collect any information from your computer and are used solely to facilitate your current visit to the Site. Their transient nature means they are primarily used for critical, short-term functionalities.
+            </p>
+            <h4>3.2. Persistent Cookies</h4>
+            <p>
+                Persistent cookies, also known as "permanent" or "stored" cookies, remain on your device for a longer period, even after you close your browser. They have an expiration date and will be deleted automatically when that date is reached, or they can be manually deleted by you. These cookies are used to remember your preferences or actions across multiple visits to a website. Examples include remembering your language preference, login details so you don't have to re-enter them every time, or specific customization settings. They allow for a more personalized and convenient experience by recalling your choices from previous sessions.
+            </p>
+            <h4>3.3. First-Party Cookies</h4>
+            <p>
+                First-party cookies are cookies set by the website you are visiting (i.e., Yumckify.com). These cookies are generally used to improve your experience on our Site, such as remembering your preferences, managing your login session, or enabling core functionalities. Since they are set by us, we have direct control over the data they collect and how it is used. They are integral to the Site's operational efficiency and user-centric design, ensuring that your interactions are smooth and tailored to your needs.
+            </p>
+            <h4>3.4. Third-Party Cookies</h4>
+            <p>
+                Third-party cookies are cookies set by a domain other than the one you are visiting. These are typically used for cross-site tracking, ad serving, and analytics by external services integrated into the website. For example, if we use Google Analytics, Google sets a third-party cookie to collect data on our behalf. Similarly, social media sharing buttons or embedded videos from platforms like YouTube might set third-party cookies. While we choose to integrate these services, the cookies themselves are controlled by the respective third parties and are subject to their own privacy policies. These cookies enable functionalities that enhance the Site's offerings, such as providing detailed analytics or facilitating social sharing.
+            </p>
+
+            <h3>4. Specific Cookies Yumckify May Use (Examples)</h3>
+            <p>
+                To provide a clearer picture, here are examples of specific types of cookies that Yumckify (or its third-party partners) might use on the Site, along with their detailed purposes. This list is illustrative and not exhaustive, as the exact cookies used can change over time based on our service providers and feature updates.
+            </p>
+
+            <h4>4.1. Authentication Cookies</h4>
+            <p>
+                These cookies are crucial for managing your user account. When you log into your Yumckify account, an authentication cookie is set on your device. This cookie allows us to recognize you as a logged-in user as you navigate through different pages of the Site, preventing you from having to re-enter your login credentials for every action. It maintains your session state, ensuring a seamless and secure browsing experience within your personalized account area. Without these cookies, features like saving favorite recipes, commenting on posts, or participating in challenges would require constant re-authentication, making the user experience highly inconvenient and impractical. They are fundamental to providing authenticated access to personalized content and services.
+            </p>
+            <h4>4.2. Security Cookies</h4>
+            <p>
+                Security cookies are vital for protecting your account and our Site from fraudulent activities and unauthorized access. They help us detect suspicious login attempts, prevent cross-site request forgery (CSRF) attacks, and generally enhance the security posture of our platform. These cookies might store encrypted information to verify the authenticity of your requests or to identify unusual browsing patterns that could indicate a security threat. By using these cookies, we can better safeguard your personal information and maintain the integrity of our Services, ensuring a safer online environment for all users. They are a critical component of our overall cybersecurity strategy.
+            </p>
+            <h4>4.3. Load Balancing Cookies</h4>
+            <p>
+                When a website experiences high traffic, load balancing cookies help distribute network traffic across multiple servers. This ensures that the Site remains responsive and performs optimally, even during peak usage times. These cookies direct your requests to the most available server, preventing any single server from becoming overloaded and causing slowdowns or outages. They are essential for maintaining the stability and availability of our Services, providing a consistent and reliable experience regardless of the number of concurrent users. Their primary function is to optimize server resource utilization and enhance Site reliability.
+            </p>
+            <h4>4.4. User Interface Customization Cookies</h4>
+            <p>
+                These cookies remember choices you make about the appearance or functionality of the Site. For example, they might recall your preferred language, text size, or specific layout preferences you've set. If you've customized your dashboard or chosen a specific theme, these cookies ensure those settings persist across sessions, providing a consistent and personalized user interface. They enhance user convenience by reducing the need to repeatedly adjust settings, making your interaction with Yumckify more efficient and tailored to your individual needs. These cookies contribute significantly to a user-friendly and adaptable browsing environment.
+            </p>
+            <h4>4.5. Analytics and Research Cookies (e.g., Google Analytics)</h4>
+            <p>
+                These cookies collect information about how visitors use our Site, such as which pages are most popular, the time spent on each page, and the path users take through the Site. We use this data to understand user behavior, identify areas for improvement, and optimize our content and features. Google Analytics is a common tool for this, using cookies to track anonymous data like visitor numbers, traffic sources, and user engagement. This aggregated data helps us make informed decisions about Site development, content strategy, and overall user experience enhancements. The insights gained from these cookies are invaluable for continuous improvement.
+            </p>
+            <h4>4.6. Advertising and Retargeting Cookies (e.g., Google Ads, Facebook Pixel)</h4>
+            <p>
+                These cookies are used to deliver more relevant advertisements to you based on your interests and browsing behavior. They track your visits to our Site and other websites to build a profile of your preferences. For example, if you view several dessert recipes, you might later see ads for baking ingredients or dessert-related products. They also help us measure the effectiveness of our advertising campaigns and limit the number of times you see a particular ad. These cookies are typically placed by third-party advertising networks and are crucial for personalized marketing efforts. They allow us to reach the right audience with the right message, optimizing our ad spend.
+            </p>
+            <h4>4.7. Social Media Cookies (e.g., Facebook, Instagram, TikTok)</h4>
+            <p>
+                When you interact with social media features on our Site (e.g., "Like" buttons, "Share" buttons, embedded social media feeds), these third-party platforms may set their own cookies. These cookies enable social media functionalities, track your interactions with our content on those platforms, and may be used by the social media companies for their own advertising and personalization purposes. For instance, a TikTok cookie might be set if you watch an embedded TikTok recipe video. These cookies are governed by the privacy policies of the respective social media companies and facilitate the integration of social sharing and engagement features on our Site.
+            </p>
+            <h4>4.8. A/B Testing Cookies</h4>
+            <p>
+                We sometimes conduct A/B tests to evaluate different versions of our Site features or content (e.g., two different layouts for a recipe page) to see which performs better. A/B testing cookies ensure that you consistently see the same version of a test during your session, allowing us to accurately measure the impact of each variation. This helps us make data-driven decisions about design and functionality improvements, ensuring that we are always optimizing the user experience based on real user interactions. These cookies are temporary and are used purely for experimental purposes.
+            </p>
+            <h4>4.9. Affiliate Marketing Cookies</h4>
+            <p>
+                If we participate in affiliate marketing programs (e.g., linking to kitchen products on Amazon), affiliate cookies are used to track whether a user clicked on an affiliate link from our Site and subsequently made a purchase on the third-party merchant's site. This allows us to earn a commission for referring sales. These cookies are typically set by the affiliate network or the merchant and are essential for tracking the referral source accurately. They help support Yumckify by generating revenue from product recommendations that align with our content.
+            </p>
+            <h4>4.10. Video Player Cookies (e.g., YouTube, Vimeo)</h4>
+            <p>
+                When we embed videos from platforms like YouTube or Vimeo on our Site, these third-party video players may set cookies. These cookies are used to remember your video playback preferences (e.g., volume, quality), track video viewing statistics, and may also be used by the video platform for advertising or personalization purposes. The use of these cookies is governed by the respective video platform's privacy policy. They are necessary to provide rich media content and enhance the visual experience on Yumckify.
+            </p>
+            <h4>4.11. Content Recommendation Cookies</h4>
+            <p>
+                These cookies help us provide you with personalized content recommendations, such as "recipes you might like" or "similar articles." They analyze your browsing history on our Site (e.g., recipes viewed, categories explored) to suggest other content that might be relevant to your interests. This enhances discovery and keeps you engaged with our vast library of culinary content. These cookies are designed to make your experience more intuitive and tailored to your evolving tastes.
+            </p>
+            <h4>4.12. Commenting System Cookies</h4>
+            <p>
+                If we use a third-party commenting system (e.g., Disqus) on our blog posts or recipe pages, these systems will set cookies to manage user authentication, remember your comments, and track engagement within the comment sections. This allows for a seamless commenting experience and helps us moderate discussions effectively. These cookies are essential for fostering community interaction around our content.
+            </p>
+            <h4>4.13. Web Font Cookies</h4>
+            <p>
+                Some websites use custom fonts served from third-party services (e.g., Google Fonts). While not strictly tracking cookies, these services may set a cookie to remember that your browser has already downloaded a specific font, improving page loading times on subsequent visits. This helps maintain a consistent and aesthetically pleasing visual identity across the Site.
+            </p>
+            <h4>4.14. Bug Reporting/Error Tracking Cookies</h4>
+            <p>
+                These cookies are used by services that help us identify and track errors or bugs on our Site. They collect information about system crashes, performance issues, or unexpected behavior to help our development team diagnose and fix problems quickly. This ensures the stability and reliability of the Site, providing a smoother experience for all users. The data collected is typically technical and anonymized.
+            </p>
+            <h4>4.15. Anti-Spam/Bot Protection Cookies (e.g., reCAPTCHA)</h4>
+            <p>
+                To protect our forms (e.g., contact form, comment sections) from spam and automated bots, we may use services like Google reCAPTCHA. These services can set cookies to analyze user behavior and distinguish between human users and automated software, enhancing the security and integrity of our interactive features. These cookies are crucial for maintaining a clean and secure platform.
+            </p>
+            <h4>4.16. Geolocation Cookies</h4>
+            <p>
+                These cookies might be used to determine your general geographic location (e.g., country or city) based on your IP address. This information can help us customize content, display region-specific offers, or comply with local regulations. They do not track your precise location unless you explicitly grant permission for location services.
+            </p>
+            <h4>4.17. Session Management Cookies</h4>
+            <p>
+                Beyond simple authentication, session management cookies are used to track the state of your interaction with the Site. For example, if you are filling out a multi-step form or configuring complex preferences, these cookies ensure that your progress is saved as you move from one step to the next, preventing data loss and enhancing usability.
+            </p>
+            <h4>4.18. User Feedback/Survey Cookies</h4>
+            <p>
+                If we use third-party tools to collect user feedback or conduct surveys on the Site, these tools may set cookies. These cookies help ensure that you are not asked to complete the same survey multiple times and can track your responses, allowing us to gather valuable insights into user satisfaction and preferences.
+            </p>
+            <h4>4.19. Chat Support Cookies</h4>
+            <p>
+                If Yumckify implements a live chat support feature, cookies will be used to maintain your chat session, remember your conversation history, and link you to the same support agent if you return. This ensures a continuous and efficient customer service experience.
+            </p>
+            <h4>4.20. Consent Management Platform Cookies</h4>
+            <p>
+                These are the cookies set by the cookie consent banner itself. They remember your cookie preferences (e.g., whether you accepted or declined certain cookie categories) so that the banner does not reappear on every visit and your choices are respected. These are essential for GDPR and similar privacy compliance.
+            </p>
+            <h4>4.21. Accessibility Cookies</h4>
+            <p>
+                If the Site offers accessibility features (e.g., high contrast mode, larger font size), these cookies can remember your chosen settings to ensure a consistent browsing experience for users with specific accessibility needs.
+            </p>
+            <h4>4.22. Acknowledgment Cookies</h4>
+            <p>
+                These cookies simply record that you have seen and acknowledged certain messages or banners on the Site (e.g., a new feature announcement, a temporary alert). This prevents repetitive display of information you've already seen.
+            </p>
+            <h4>4.23. Conversion Tracking Cookies</h4>
+            <p>
+                Used in conjunction with advertising, these cookies track when a user completes a specific action on the Site after clicking an ad (e.g., signing up for a newsletter, creating an account). This helps advertisers measure the success of their campaigns.
+            </p>
+            <h4>4.24. Device Fingerprinting (Non-Cookie)</h4>
+            <p>
+                While not a cookie, some advanced analytics or security systems may use "device fingerprinting" techniques. This involves collecting various pieces of information about your device and browser configuration (e.g., screen resolution, installed fonts, browser plugins) to create a unique "fingerprint" that can identify your device across sessions, even without traditional cookies. We disclose this here for comprehensive transparency, as it serves similar identification purposes.
+            </p>
+            <h4>4.25. Pixel Tags / Web Beacons</h4>
+            <p>
+                These are tiny graphic files (often called "clear GIFs" or "tracking pixels") embedded in web pages or emails. They are used to track user activity, such as whether an email has been opened or a specific page has been viewed. They work in conjunction with cookies to gather data for analytics and marketing purposes, often invisible to the user.
+            </p>
+            <h4>4.26. Local Storage / Session Storage</h4>
+            <p>
+                Modern web browsers offer "Web Storage" APIs (localStorage and sessionStorage) which allow websites to store larger amounts of data directly in the browser than cookies. Session storage is temporary (cleared when browser closes), while local storage persists. We might use these for client-side data storage, such as remembering your last viewed recipe or temporary UI states, without sending data to our servers on every request.
+            </p>
+            <h4>4.27. Flash Cookies (Local Shared Objects)</h4>
+            <p>
+                While less common now, older websites might use Flash cookies (also known as Local Shared Objects or LSOs) for data storage. These function similarly to regular cookies but are stored differently and managed through Adobe Flash Player settings. Yumckify generally avoids these, but if embedded third-party content uses Flash, they might be present.
+            </p>
+            <h4>4.28. E-commerce Cart Cookies</h4>
+            <p>
+                Specifically for our "Shop the Yum" section, these cookies are dedicated to remembering the items you've added to your shopping cart as you browse. This ensures that your selected products remain in your cart even if you navigate away from the shop pages or leave the Site and return later, providing a seamless shopping experience.
+            </p>
+            <h4>4.29. User-Generated Content Moderation Cookies</h4>
+            <p>
+                When you submit user-generated content (e.g., recipes, comments), certain cookies might be used to track the status of your submission (e.g., pending review, approved) or to associate your submission with your user account for moderation purposes, ensuring community guidelines are upheld.
+            </p>
+            <h4>4.30. Recipe Rating/Review Cookies</h4>
+            <p>
+                If you rate or review a recipe, a cookie might be set to prevent you from submitting multiple ratings for the same recipe or to remember your previous rating, contributing to the integrity of our review system.
+            </p>
+            <h4>4.31. Newsletter Pop-up Suppression Cookies</h4>
+            <p>
+                When you interact with a newsletter sign-up pop-up, a cookie might be set to remember that you have either signed up or dismissed the pop-up, preventing it from reappearing excessively and disrupting your browsing experience.
+            </p>
+            <h4>4.32. Video Playback Progress Cookies</h4>
+            <p>
+                For longer recipe videos or tutorials, a cookie might store your playback progress, allowing you to resume watching from where you left off if you close the browser or navigate away and return later.
+            </p>
+            <h4>4.33. Search History Cookies</h4>
+            <p>
+                These cookies can remember your recent search queries on the Site, making it easier for you to quickly revisit previous searches and find relevant content without retyping.
+            </p>
+            <h4>4.34. Recipe Filter/Sort Preference Cookies</h4>
+            <p>
+                If you apply filters (e.g., "gluten-free," "vegan") or sort options (e.g., "most popular," "newest") to recipe listings, cookies can store these preferences for your current or future sessions, streamlining your content discovery.
+            </p>
+            <h4>4.35. Referral Tracking Cookies</h4>
+            <p>
+                These cookies track the source from which you arrived at Yumckify (e.g., from a specific social media post, an email campaign, or another website). This helps us understand the effectiveness of our marketing channels.
+            </p>
+            <h4>4.36. Device-Specific Optimization Cookies</h4>
+            <p>
+                Cookies might be used to detect your device type (e.g., mobile, tablet, desktop) and serve optimized content or layouts specifically designed for that device, ensuring a consistent and responsive user experience across platforms.
+            </p>
+            <h4>4.37. User Segmenting Cookies</h4>
+            <p>
+                For internal analytics or targeted content delivery, cookies might categorize users into different segments (e.g., "new user," "frequent visitor," "dessert lover") based on their behavior, allowing for more tailored interactions.
+            </p>
+            <h4>4.38. Data Collection Opt-Out Cookies</h4>
+            <p>
+                If you opt out of certain data collection or advertising, a specific "opt-out cookie" might be placed on your device. This cookie signals your preference to our systems and prevents further data collection for those specific purposes.
+            </p>
+            <h4>4.39. Performance Monitoring Cookies</h4>
+            <p>
+                These cookies are used to monitor the performance of specific features or parts of the Site in real-time, helping us identify and address any bottlenecks or slowdowns quickly to maintain a smooth user experience.
+            </p>
+            <h4>4.40. Recipe Print/Save Preference Cookies</h4>
+            <p>
+                If the Site offers features to print or save recipes, cookies might remember your preferences for these actions (e.g., preferred print format, default save location) for future convenience.
+            </p>
+
+            <h3>5. Your Choices: Managing Your Cookie Preferences</h3>
+            <p>
+                You have the power to control and manage cookies on your device. While most web browsers automatically accept cookies, you can usually modify your browser settings to decline cookies or to notify you when a cookie is being placed on your computer. Please be aware that blocking or deleting cookies may impact your experience on our Site and other websites, as some features may not function correctly.
+            </p>
+            <h4>5.1. Browser Settings</h4>
+            <p>
+                You can manage cookies through your web browser settings. Most browsers allow you to:
+            </p>
+            <ul>
+                <li><strong>Block all cookies:</strong> This will prevent any website from placing cookies on your device.</li>
+                <li><strong>Block third-party cookies:</strong> This will only block cookies from domains other than the one you are visiting.</li>
+                <li><strong>Receive alerts:</strong> Your browser can notify you when a website tries to set a cookie, allowing you to accept or decline it manually.</li>
+                <li><strong>Delete existing cookies:</strong> You can clear all stored cookies from your browser history.</li>
+            </ul>
+            <p>
+                Here are links to instructions for managing cookies in popular browsers:
+            </p>
+            <ul>
+                <li><a href="https://support.google.com/chrome/answer/95647" target="_blank">Google Chrome</a></li>
+                <li><a href="https://support.mozilla.org/en-US/kb/enable-and-disable-cookies-website-preferences" target="_blank">Mozilla Firefox</a></li>
+                <li><a href="https://support.microsoft.com/en-us/microsoft-edge/delete-cookies-in-microsoft-edge-63947406-4197-937b-8234-2a7ad56897fc" target="_blank">Microsoft Edge</a></li>
+                <li><a href="https://support.apple.com/guide/safari/manage-cookies-and-website-data-sfri11471/mac" target="_blank">Apple Safari</a></li>
+                <li><a href="https://help.opera.com/en/latest/web-preferences/#cookies" target="_blank">Opera</a></li>
+            </ul>
+            <p>
+                Please note that if you disable cookies, some features of the Yumckify Site may not function as intended. For example, you might not be able to stay logged in, or personalized recommendations may not appear.
+            </p>
+
+            <h4>5.2. Opting Out of Specific Services</h4>
+            <p>
+                You can also opt-out of certain third-party advertising and analytics cookies directly:
+            </p>
+            <ul>
+                <li><strong>Google Analytics:</strong> You can install the Google Analytics opt-out browser add-on, which prevents Google Analytics from collecting data about your visits. <a href="https://tools.google.com/dlpage/gaoptout" target="_blank">Google Analytics Opt-out Browser Add-on</a></li>
+                <li><strong>Ad Networks:</strong> You can opt-out of interest-based advertising from many ad networks through industry opt-out pages:
+                    <ul>
+                        <li>For users in the US: <a href="https://optout.aboutads.info/" target="_blank">DAA Opt-Out Page</a></li>
+                        <li>For users in Europe: <a href="https://www.youronlinechoices.eu/" target="_blank">EDAA Opt-Out Page</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>6. Changes to This Cookies Policy</h3>
+            <p>
+                We may update our Cookies Policy from time to time to reflect changes in our practices, technology, or legal requirements. We will notify you of any changes by posting the new Cookies Policy on this page and updating the "Last Updated" date at the top. We encourage you to review this policy periodically. Your continued use of the Site after any modifications will constitute your acknowledgment of the modifications and your consent to abide and be bound by the modified Cookies Policy.
+            </p>
+
+            <h3>7. Contact Us</h3>
+            <p>
+                If you have any questions or concerns about this Cookies Policy or our use of cookies, please do not hesitate to contact us:
+            </p>
+            <ul>
+                <li><strong>Email:</strong> privacy@yumckify.com</li>
+                <li><strong>Mailing Address:</strong><br>
+                    Yumckify Privacy Team<br>
+                    123 Flavor Street<br>
+                    Culinary City, Foodie Land, 12345<br>
+                    [Your Country/Region]
+                </li>
+            </ul>
+            <p>
+                We are dedicated to ensuring your experience on Yumckify is both delicious and secure. Thank you for taking the time to understand our cookie practices.
+            </p>
+        </section>
+    </main>
+
+    <div class="cookie-consent-box" id="cookieConsentBox">
+        <p>We use cookies to enhance your browsing experience, analyze site traffic, and serve personalized content. By clicking "Accept All," you consent to our use of cookies as described in our <a href="cookies.html" style="color: var(--bold-mango-yellow); text-decoration: underline;">Cookies Policy</a>.</p>
+        <div class="buttons">
+            <button id="acceptCookies">Accept All</button>
+            <button id="declineCookies" class="decline">Decline</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const cookieConsentBox = document.getElementById('cookieConsentBox');
+            const acceptButton = document.getElementById('acceptCookies');
+            const declineButton = document.getElementById('declineCookies');
+
+            // Check if user has already made a choice
+            const cookieConsent = localStorage.getItem('yumckify_cookie_consent');
+
+            if (!cookieConsent) {
+                // If no choice made, show the box after a short delay
+                setTimeout(() => {
+                    cookieConsentBox.classList.add('show');
+                }, 1000); // Show after 1 second
+            }
+
+            acceptButton.addEventListener('click', function() {
+                localStorage.setItem('yumckify_cookie_consent', 'accepted');
+                cookieConsentBox.classList.remove('show');
+                // You might want to reload the page or initialize analytics scripts here
+                console.log('Cookies accepted!');
+            });
+
+            declineButton.addEventListener('click', function() {
+                localStorage.setItem('yumckify_cookie_consent', 'declined');
+                cookieConsentBox.classList.remove('show');
+                // You might want to disable certain scripts here
+                console.log('Cookies declined!');
+                // Optionally, clear existing non-essential cookies
+                clearNonEssentialCookies();
+            });
+
+            function clearNonEssentialCookies() {
+                // This is a simplified example. In a real application,
+                // you would need to know the names of all non-essential cookies
+                // and iterate through them to delete them.
+                // For demonstration, let's just log a message.
+                console.log('Attempting to clear non-essential cookies (implementation needed).');
+                // Example: document.cookie = "cookie_name=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+            }
+        });
+    </script>
+
+    <footer>
+        <div class="container">
+            <div class="footer-info">
+                <p>&copy; 2025 Yumckify. All rights reserved.</p>
+                <p>Turning Up the Yum Factor since 2025!</p>
+                <p>Yumckify HQ: 123 Flavor Street, Culinary City, Foodie Land, 12345</p>
+                <p>Email: info@yumckify.com</p>
+                <p>Phone: +1 (555) Yum-Food</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><a href="terms.html">Terms</a></li>
+                    <li><a href="cookies.html">Cookies</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+</body>
+</html>
